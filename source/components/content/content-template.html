@@ -1,0 +1,11 @@
+<article class="post">
+    <header>
+        <div class="title">
+            <h2>{{cc.article.article_title}}</h2>
+            <p>{{cc.article.article_subtitle}}</p>
+        </div>
+    </header>
+    <img ng-src="/images/article/{{image.article_image_filename}}" ng-class="image.article_image_type_class" ng-repeat="image in cc.article.images" ng-if="image.article_image_type < 4">
+    <div ng-bind-html="cc.article.article_content"></div>
+    <img ng-src="/images/article/{{image.article_image_filename}}" ng-class="image.article_image_type_class" ng-repeat="image in cc.article.images" ng-if="image.article_image_type > 3">
+</article>
