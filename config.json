@@ -2,13 +2,13 @@
     "dev" : {
         "appConfig": {
             "apiUrl": "http://localhost:3001/api",
-            "tokenName": "skeleton_token"
+            "tokenName": "rhapsody_token"
         }
     },
     "prod" : {
         "appConfig": {
-            "apiUrl": "http://10.117.3.112:3001/api",
-            "tokenName": "skeleton_token"
+            "apiUrl": "http://rhapsodyfiber.com:3002/api",
+            "tokenName": "rhapsody_token"
         }
     }
 }
