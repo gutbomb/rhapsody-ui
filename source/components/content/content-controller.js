@@ -2,11 +2,12 @@ export default function (contentService, $route, appConfig) {
     let cc = this;
 
     cc.error = '';
-    cc.success = false;
+    cc.successMessage = false;
     cc.selectedArticle = 'home';
     cc.imagePath = appConfig.apiUrl+'/article-image/';
 
     function getArticle(tab) {
+        cc.successMessage = false;
         contentService.getArticle(tab)
             .then(function(data) {
                 cc.article = data;
