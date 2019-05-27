@@ -9,7 +9,7 @@ export default function (loginService, $rootScope, $location, $routeParams) {
     if (typeof($routeParams.userValidationString)!=='undefined') {
         loginService.validateUser($routeParams.userValidationString)
         .then(function () {
-            $location.path('/login');
+            $location.path('/admin/login');
         },
         function (response) {
             lc.success = false;

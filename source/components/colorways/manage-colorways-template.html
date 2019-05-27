@@ -1,0 +1,33 @@
+<article class="post">
+    <header>
+        <div class="title">
+            <h2 class="page-title">Colorways</h2>
+        </div>
+    </header>
+    <div id="colorways_container">
+        <div ng-repeat="category in cwc.colorways">
+            <div class="colorway_category_container">
+                <div class="colorway_category">
+                    <label>Category Name
+                        <input type="text" ng-model="category.colorway_category_name"><button>Edit Name</button>
+                    </label>
+                </div>
+                <label>Colorways for {{category.colorway_category_name}}
+                    <div ng-repeat="colorway in category.colorways">
+                        <div class="colorway_name">
+                            <label>Colorway Name
+                                <input type="text" ng-model="colorway.colorway_name">
+                            </label>
+                        </div>
+                        <label>Images for {{colorway.colorway_name}}
+                            <div class="colorway_images">
+                                <img ng-src="/images/colorways/{{image.colorway_image_filename}}" class="colorway_image" ng-repeat="image in colorway.images">
+                                <button>Add Image for {{colorway.colorway_name}}</button>
+                            </div>
+                        </label>
+                    </div>
+                </label>
+            </div>
+        </div>
+    </div>
+</article>

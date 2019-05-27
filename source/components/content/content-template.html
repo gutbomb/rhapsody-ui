@@ -5,7 +5,6 @@
             <p>{{cc.article.article_subtitle}}</p>
         </div>
     </header>
-    <img ng-src="/images/article/{{image.article_image_filename}}" ng-class="image.article_image_type_class" ng-repeat="image in cc.article.images" ng-if="image.article_image_type < 4">
+    <img ng-src="{{cc.imagePath}}{{cc.article.article_image_filename}}" ng-class="cc.article.article_image_class" ng-if="cc.article.article_image_filename">
     <div ng-bind-html="cc.article.article_content"></div>
-    <img ng-src="/images/article/{{image.article_image_filename}}" ng-class="image.article_image_type_class" ng-repeat="image in cc.article.images" ng-if="image.article_image_type > 3">
 </article>

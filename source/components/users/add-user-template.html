@@ -1,43 +1,45 @@
-<section ng-if="isAdmin">
-    <div class="container">
-        <h1>Add User</h1>
-        <form name="addUserForm" id="addUserForm">
-            <div class="row">
-                <div class="col-xs-6">
-                    <div class="form-group">
-                        <label for="firstName">First Name</label>
-                        <input type="text" ng-model="auc.user.first_name" id="firstName" class="form-control" required>
-                    </div>
-                </div>
-                <div class="col-xs-6">
-                    <div class="form-group">
-                        <label for="lastName">Last Name</label>
-                        <input type="text" ng-model="auc.user.last_name" id="lastName" class="form-control" required>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" ng-model="auc.user.email" id="email" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="userLevel">User Level</label>
-                <select ng-model="auc.user.user_level" id="userLevel" class="form-control" required>
-                    <option value="admin">Admin</option>
-                    <option value="user">User</option>
-                </select>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 text-left">
-                    <button class="btn btn-primary" ng-click="auc.addUser()" ng-disabled="addUserForm.$invalid">Add User</button>
-                </div>
-            </div>
-        </form><br>
-        <div class="alert alert-success" ng-show="auc.success">
-            {{auc.successMessage}}
+<article class="post" ng-if="isAdmin">
+    <header>
+        <div class="title">
+            <h2>Add User</h2>
         </div>
-        <div class="alert alert-danger" ng-show="auc.error">
-            {{auc.error}}
+    </header>
+    <form name="addUserForm" id="addUserForm">
+        <div class="row">
+            <div>
+                <div>
+                    <label for="firstName">First Name
+                    <input type="text" ng-model="auc.user.first_name" id="firstName" required></label>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label for="lastName">Last Name
+                    <input type="text" ng-model="auc.user.last_name" id="lastName" required></label>
+                </div>
+            </div>
         </div>
+        <div class="form-group">
+            <label for="email">Email
+            <input type="email" ng-model="auc.user.email" id="email" required></label>
+        </div>
+        <div class="form-group">
+            <label for="userLevel">User Level
+            <select ng-model="auc.user.user_level" id="userLevel" required>
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+            </select></label>
+        </div>
+        <div class="row">
+            <div class="button-row">
+                <button class="default-button" ng-click="auc.addUser()" ng-disabled="addUserForm.$invalid">Add User</button>
+            </div>
+        </div>
+    </form><br>
+    <div class="alert alert-success" ng-show="auc.success">
+        {{auc.successMessage}}
     </div>
-</section>
+    <div class="alert alert-danger" ng-show="auc.error">
+        {{auc.error}}
+    </div>
+</article>

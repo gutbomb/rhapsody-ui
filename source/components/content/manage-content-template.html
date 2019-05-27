@@ -1,0 +1,86 @@
+<article class="post">
+    <header>
+        <div class="title">
+            <h2>Manage Content</h2>
+            <p>Edit text and images for pages</p>
+        </div>
+    </header>
+    <label>Select Page
+    <select ng-change="cc.getArticle(cc.selectedArticle)" ng-model="cc.selectedArticle">
+        <option ng-repeat="article in cc.articles" ng-value="article.article_tab">{{article.article_title}}</option>
+    </select></label>
+
+        <div>
+            <label for="articleTitle">Title
+            <input type="text" id="articleTitle" ng-model="cc.article.article_title" required autofocus></label>
+        </div>
+        <div>
+            <label for="articleSubtitle">Subtitle
+            <input type="text" id="articleSubtitle" ng-model="cc.article.article_subtitle" required autofocus></label>
+        </div>
+        <div>
+            <label>Image</label>
+            <div class="image-editor-item" ng-if="cc.article.article_image_filename">
+                <img ng-src="{{cc.imagePath}}{{cc.article.article_image_filename}}" class="image-editor">
+                <span>{{cc.article.article_image_filename}}</span>
+                <select ng-model="cc.article.article_image_class">
+                    <option value="article-image-left">Left Aligned</option>
+                    <option value="article-image-right">Right Aligned</option>
+                    <option value="article-image-full">Full-width</option>
+                </select>
+                <a href="#" ng-click="cc.removeImage()" class="fa-trash danger"> Remove</a>
+            </div>
+                <form name="cc.imageUpload" class="image-editor-item" ng-if="!cc.article.article_image_filename">
+                    <input
+                            type="file"
+                            ngf-select
+                            ng-model="cc.uploadFile"
+                            name="uploadFile"
+                            ngf-pattern="'image/*'"
+                            accept="image/*"
+                            ngf-max-size="20MB"
+                    />
+                    <img class="image-editor" ngf-thumbnail="cc.uploadFile || '/images/thumb.png'"/>
+                    <select ng-model="cc.article.article_image_class">
+                        <option value="article-image-left">Left Aligned</option>
+                        <option value="article-image-right">Right Aligned</option>
+                        <option value="article-image-full">Full-width</option>
+                    </select>
+                    <a href="#" ng-click="cc.uploadImage()" class="fa-upload"> Add</a>
+                    <i ng-show="cc.imageUpload.file.$error.required">*required</i><br>
+                    <i ng-show="cc.imageUpload.file.$error.maxSize">File too large
+                        {{cc.uploadFile.size / 1000000|number:1}}MB: max 20M</i>
+                    <p>{{cc.uploadProgress}}</p>
+                </form>
+        </div>
+        <div>
+            <label>Page Text</label>
+            <textarea ckeditor="cc.ckeditorConfig" ng-model="cc.article.article_content"></textarea>
+        </div>
+        <div class="row">
+            <div class="button-row">
+                <br><button ng-click="cc.updateArticle()" class="default-button">Save Changes</button>
+            </div>
+            <div class="button-row">
+                <br><button ng-click="cc.getArticle(cc.selectedArticle)">Reset Changes</button>
+            </div>
+        </div>
+    <br>
+    <div class="alert alert-success" ng-show="euc.success">
+        {{euc.successMessage}}
+    </div>
+    <div class="alert alert-danger" ng-show="euc.error">
+        {{euc.error}}
+    </div>
+</article>
+<h3>Preview</h3>
+<article class="post">
+    <header>
+        <div class="title">
+            <h2>{{cc.article.article_title}}</h2>
+            <p>{{cc.article.article_subtitle}}</p>
+        </div>
+    </header>
+    <img ng-src="{{cc.imagePath}}{{cc.article.article_image_filename}}" ng-class="cc.article.article_image_class" ng-if="cc.article.article_image_filename">
+    <div ng-bind-html="cc.article.article_content"></div>
+</article>

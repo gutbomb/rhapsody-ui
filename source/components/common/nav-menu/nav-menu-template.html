@@ -1,4 +1,11 @@
 <header id="header" ng-controller="navMenuController">
+    <nav class="main" id="admin-button" ng-if="$root.isAdmin">
+        <ul>
+            <li class="menu">
+                <a class="fa-gear" href="#admin-menu">Admin</a>
+            </li>
+        </ul>
+    </nav>
     <h1><a href="index.html">Rhapsody Fiber Arts</a></h1>
     <nav class="links">
         <ul>

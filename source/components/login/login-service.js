@@ -110,7 +110,9 @@ export default function ($q, $http, $window, $rootScope, $location, appConfig) {
     function logoutUser() {
         clearToken();
         $rootScope.isLoggedIn = false;
-        $location.path('/login');
+        $rootScope.isAdmin = false;
+        $rootScope.user = {};
+        $location.path('/home');
     }
 
     function updateProfile() {

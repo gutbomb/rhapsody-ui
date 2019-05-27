@@ -8,7 +8,8 @@
 
 	var	$window = $(window),
 		$body = $('body'),
-		$menu = $('#menu')
+		$menu = $('#menu'),
+		$adminMenu = $('#admin-menu');
 
 
 	// Play initial animations on page load.
@@ -30,6 +31,18 @@
 				side: 'right',
 				target: $body,
 				visibleClass: 'is-menu-visible'
+			});
+		$adminMenu
+			.appendTo($body)
+			.panel({
+				delay: 500,
+				hideOnClick: true,
+				hideOnSwipe: true,
+				resetScroll: true,
+				resetForms: true,
+				side: 'left',
+				target: $body,
+				visibleClass: 'is-admin-visible'
 			});
 
 	// Search (header).

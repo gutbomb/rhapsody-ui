@@ -1,4 +1,4 @@
-export default function (loginService) {
+export default function (loginService, $location) {
     let auc = this;
 
     auc.error = '';
@@ -14,6 +14,7 @@ export default function (loginService) {
             auc.user.last_name = '';
             auc.user.user_level = '';
             auc.user.email = '';
+            $location.path('/admin/users');
         },
         function(response) {
             auc.success = false;

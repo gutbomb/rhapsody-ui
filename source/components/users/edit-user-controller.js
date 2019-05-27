@@ -1,8 +1,9 @@
-export default function ($routeParams, loginService) {
+export default function ($routeParams, loginService, $location) {
     let euc = this;
 
     euc.error = '';
     euc.success = false;
+    euc.displayModal = false;
 
     function getUser() {
         loginService.getUser($routeParams.id)
@@ -44,19 +45,15 @@ export default function ($routeParams, loginService) {
             euc.success = true;
             euc.successMessage = 'User Deleted Successfully';
             euc.user = '';
+            $location.path('/admin/users');
         },
         function() {
             euc.error = 'User Delete Failed';
         });
     }
 
-    function initiateModal() {
-        $('#delete-user-modal').modal();
-    }
-
     euc.deleteUser = deleteUser;
     euc.updateUser = updateUser;
     euc.resetPassword = resetPassword;
-    euc.initiateModal = initiateModal;
     euc.getUser = getUser;
 }
