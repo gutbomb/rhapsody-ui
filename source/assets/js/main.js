@@ -6,7 +6,7 @@
 
 (function($) {
 
-	var	$window = $(window),
+	let	$window = $(window),
 		$body = $('body'),
 		$menu = $('#menu'),
 		$adminMenu = $('#admin-menu');
@@ -46,7 +46,7 @@
 			});
 
 	// Search (header).
-		var $search = $('#search'),
+		let $search = $('#search'),
 			$search_input = $search.find('input');
 
 		$body

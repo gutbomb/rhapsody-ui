@@ -123,12 +123,12 @@ export default function (colorwaysService, appConfig) {
                     cwc.addColorwayImage(colorwayId, resp.config.data.file.name);
                     cwc.uploadFile = null;
                 } else {
-                    cwc.error='an error occured';
+                    cwc.error='an error occurred';
                 }
             }, function (resp) { //catch error
                 cwc.error='Error status: ' + resp.status;
             }, function (evt) {
-                var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+                let progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
                 cwc.uploadProgress = 'progress: ' + progressPercentage + '% '; // capture upload progress
             });
     };

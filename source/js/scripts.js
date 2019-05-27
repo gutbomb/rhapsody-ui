@@ -1,4 +1,4 @@
-var app = angular.module('skeletonUiApp', ['ngRoute', 'ngSanitize', 'angularMoment', 'skeletonUi.config', 'ngCkeditor', 'ngFileUpload']);
+const app = angular.module('rhapsodyUiApp', ['ngRoute', 'ngSanitize', 'angularMoment', 'rhapsodyUi.config', 'ngCkeditor', 'ngFileUpload']);
 
 import navMenuController from '../components/common/nav-menu/nav-menu-controller';
 import navMenu from '../components/common/nav-menu/nav-menu-directive';

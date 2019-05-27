@@ -40,7 +40,7 @@ gulp.task('buildProd', ['html', 'images', 'js', 'libs', 'assets', 'prod']);
 // dev task
 gulp.task('dev', function () {
     gulp.src('./config.json')
-    .pipe(ngConfig('skeletonUi.config', {
+    .pipe(ngConfig('rhapsodyUi.config', {
         environment: 'dev'
     }))
     .pipe(gulp.dest(dest+'/js/'));
@@ -49,7 +49,7 @@ gulp.task('dev', function () {
 // prod task
 gulp.task('prod', function () {
     gulp.src('./config.json')
-    .pipe(ngConfig('skeletonUi.config', {
+    .pipe(ngConfig('rhapsodyUi.config', {
         environment: 'prod'
     }))
     .pipe(gulp.dest(dest+'/js/'));

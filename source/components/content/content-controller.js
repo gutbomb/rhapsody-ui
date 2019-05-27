@@ -42,12 +42,12 @@ export default function (contentService, $route, appConfig) {
                     cc.article.article_image_filename = resp.config.data.file.name;
                     cc.article.article_image_class = 'article-image-full';
                 } else {
-                    cc.error='an error occured';
+                    cc.error='an error occurred';
                 }
             }, function (resp) { //catch error
                 cc.error='Error status: ' + resp.status;
             }, function (evt) {
-                var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+                let progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
                 cc.uploadProgress = 'progress: ' + progressPercentage + '% '; // capture upload progress
             });
     }
