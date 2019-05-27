@@ -10,7 +10,7 @@
             <div ng-repeat="colorway in category.colorways">
                 <div class="colorway_name">{{colorway.colorway_name}}</div>
                 <div class="colorway_images">
-                    <img ng-src="/images/colorways/{{image.colorway_image_filename}}" class="colorway_image" ng-repeat="image in colorway.images">
+                    <img ng-src="{{cwc.imagePath}}{{image.colorway_image_filename}}" class="colorway_image" ng-repeat="image in colorway.images">
                 </div>
             </div>
 

@@ -1,11 +1,14 @@
-export default function ($q, $http, appConfig) {
+export default function ($q, $http, appConfig, Upload) {
     const contentType = {'Content-Type': 'application/json'};
 
-    function addColorway(colorway) {
+    function addColorway(colorway, category) {
         return $http({
             method: 'POST',
             url: appConfig.apiUrl+'/colorways',
-            data: colorway,
+            data: {
+                colorway_name: colorway,
+                colorway_category_id: category
+            },
             headers : contentType
         });
     }
@@ -35,7 +38,9 @@ export default function ($q, $http, appConfig) {
         return $http({
             method: 'POST',
             url: appConfig.apiUrl+'/colorway-categories',
-            data: colorwayCategory,
+            data: {
+                colorway_category_name: colorwayCategory
+            },
             headers : contentType
         });
     }
@@ -61,32 +66,33 @@ export default function ($q, $http, appConfig) {
         });
     }
 
-    function addColorwayImage(colorwayImage) {
+    function addColorwayImage(colorwayImage, colorwayImageFilename) {
         return $http({
             method: 'POST',
-            url: appConfig.apiUrl+'/colorway-images',
-            data: colorwayImage,
-            headers : contentType
-        });
-    }
-
-    function updateColorwayImage(colorwayImage) {
-        return $http({
-            method: 'PUT',
-            url: appConfig.apiUrl+'/colorway-images',
-            data: colorwayImage,
+            url: appConfig.apiUrl+'/colorway-image',
+            data: {
+                colorway_id: colorwayImage,
+                colorway_image_filename: colorwayImageFilename
+            },
             headers : contentType
         });
     }
 
     function deleteColorwayImage(colorway_image_id) {
-        return $http.delete(appConfig.apiUrl+'/colorway-images/'+colorway_image_id).then(function(response) {
+        return $http.delete(appConfig.apiUrl+'/colorway-image/'+colorway_image_id).then(function(response) {
             return response.data;
         });
     }
 
+    function uploadImage(file) {
+        return Upload.upload({
+            url: appConfig.apiUrl+'/upload-colorway-image', //webAPI exposed to upload the file
+            data:{file:file} //pass file as data, should be user ng-model
+        });
+    }
+
     return {
-        addColorways: addColorway,
+        addColorway: addColorway,
         getColorways: getColorways,
         updateColorway: updateColorway,
         deleteColorway: deleteColorway,
@@ -95,7 +101,7 @@ export default function ($q, $http, appConfig) {
         updateColorwayCategory: updateColorwayCategory,
         deleteColorwayCategory: deleteColorwayCategory,
         addColorwayImage: addColorwayImage,
-        updateColorwayImage: updateColorwayImage,
-        deleteColorwayImage: deleteColorwayImage
+        deleteColorwayImage: deleteColorwayImage,
+        uploadImage: uploadImage
     };
 }

@@ -3725,8 +3725,12 @@ input, select, textarea {
 .colorway_image {
 	width: 33%;
 	padding: 20px;
+	display: inline-block;
 }
 
+.colorway_image img {
+	width: 100%;
+}
 
 .modal-overlay {
 	position: fixed;
@@ -3792,11 +3796,12 @@ input, select, textarea {
 	padding: 10px;
 }
 
-.image-editor-item a {
+.colorway_image a, .image-editor-item a {
 	text-decoration: none !important;
+	border: none !important;
 }
 
-.image-editor-item a::before{
+.colorway_image a::before,.image-editor-item a::before{
 	font-family: FontAwesome;
 
 	font-style: normal;
@@ -3807,10 +3812,6 @@ input, select, textarea {
 
 }
 
-.image-editor-item a {
-	border: none !important;
-}
-
 .danger {
 	color: #dc3545 !important;
 }
@@ -3819,14 +3820,16 @@ input, select, textarea {
 	float: none;
 	width: 100%;
 }
-#colorways_container .colorway_category label {
-	display: flex;
+
+.colorway-edit-button {
+	float: right;
+	margin-left: 10px;
 }
 
-.colorway_category_container {
-	border: black solid 1px;
+.colorway_category_container, .new-colorway-editor {
+	border: rgba(160, 160, 160, 0.3) solid 1px;
 	margin-bottom: 10px;
-	padding: 0 10px;
+	padding: 10px;
 }
 
 @media screen and (max-width: 700px){
