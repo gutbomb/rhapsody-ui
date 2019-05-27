@@ -1,40 +1,33 @@
-<section class="inner-page">
-    <div class="container">
-        <h2>Account</h2>
-        <form>
-            <div class="row">
-                <div class="col-xs-6">
-                    <div class="form-group">
-                        <label for="inputFirstName">First Name</label>
-                        <input type="text" id="inputFirstName" class="form-control" ng-model="user.user_first_name" required autofocus>
-                    </div>
-                </div>
-                <div class="col-xs-6">
-                    <div class="form-group">
-                        <label for="inputLastName">Last Name</label>
-                        <input type="text" id="inputLastName" class="form-control" ng-model="user.user_last_name" required>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" ng-model="user.user_email" id="email" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    <button class="btn btn-primary" ng-click="acc.updateProfile()">Save Changes</button>
-                </div>
-            </div>
-        </form><br>
-        <div class="alert alert-success" ng-show="acc.success">
-            {{acc.successMessage}}
+<article class="post">
+    <header>
+        <div class="title">
+            <h2>Manage Account</h2>
         </div>
-        <div class="alert alert-danger" ng-show="acc.error">
-            {{acc.error}}
+    </header>
+    <form>
+        <div class="form-group">
+            <label for="inputFirstName">First Name
+                <input type="text" id="inputFirstName" class="form-control" ng-model="user.user_first_name" required autofocus>
+            </label>
         </div>
+        <div class="form-group">
+            <label for="inputLastName">Last Name
+                <input type="text" id="inputLastName" class="form-control" ng-model="user.user_last_name" required>
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="email">Email
+                <input type="email" ng-model="user.user_email" id="email" class="form-control">
+            </label>
+        </div>
+        <div class="form-group">
+            <button ng-click="acc.updateProfile()">Save Changes</button>
+        </div>
+    </form><br>
+    <div class="alert alert-success" ng-show="acc.success">
+        {{acc.successMessage}}
     </div>
-</section>
+    <div class="alert alert-danger" ng-show="acc.error">
+        {{acc.error}}
+    </div>
+</article>

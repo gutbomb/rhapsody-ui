@@ -3832,6 +3832,14 @@ input, select, textarea {
 	padding: 10px;
 }
 
+.form-group {
+	margin-bottom: 10px;
+}
+
+.form-group button {
+	float: right;
+}
+
 @media screen and (max-width: 700px){
 	.box{
 		width: 70%;
@@ -3848,7 +3856,7 @@ input, select, textarea {
 		float: none;
 		padding: 0;
 	}
-	.button-row, .button-row button {
+	.button-row, .button-row button, .form-group button {
 		width: 100%;
 	}
 	.button-row {
