@@ -1,5 +1,6 @@
 @import url(font-awesome.min.css);
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Raleway:400,800,900");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700");
+@import url(PrestigeEliteStd.css);
 
 /*
 	Future Imperfect by HTML5 UP
@@ -195,7 +196,7 @@ input, select, textarea {
 			}
 
 	strong, b {
-		color: #3c3b3b;
+		color: #6a574c;
 		font-weight: 700;
 	}
 
@@ -208,10 +209,11 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #3c3b3b;
-		font-family: "Raleway", Helvetica, sans-serif;
+		color: #6a574c;
+		font-family: 'Prestige Elite Std', Helvetica, sans-serif;
+		font-style: normal;
 		font-weight: 800;
-		letter-spacing: 0.25em;
+		/*letter-spacing: 0.25em;*/
 		line-height: 1.65;
 		margin: 0 0 1em 0;
 		text-transform: uppercase;
@@ -1802,10 +1804,10 @@ input, select, textarea {
 		-ms-justify-content: -ms-flex-end;
 		justify-content: flex-end;
 		border-bottom: 0;
-		font-family: "Raleway", Helvetica, sans-serif;
+		font-family: 'Prestige Elite Std', Helvetica, sans-serif;
+		font-style: normal;
 		font-size: 0.6em;
-		font-weight: 400;
-		letter-spacing: 0.25em;
+		font-weight: 800;
 		text-transform: uppercase;
 		white-space: nowrap;
 	}
@@ -1883,14 +1885,14 @@ input, select, textarea {
 		background-color: transparent;
 		border: 0;
 		box-shadow: inset 0 0 0 1px rgba(160, 160, 160, 0.3);
-		color: #3c3b3b !important;
+		color: #6a574c !important;
 		cursor: pointer;
 		display: inline-block;
-		font-family: "Raleway", Helvetica, sans-serif;
+		font-family: 'Prestige Elite Std', Helvetica, sans-serif;
+		font-style: normal;
 		font-size: 0.6em;
 		font-weight: 800;
 		height: 4.8125em;
-		letter-spacing: 0.25em;
 		line-height: 4.8125em;
 		padding: 0 2.5em;
 		text-align: center;
@@ -2035,7 +2037,7 @@ input, select, textarea {
 			}
 
 	label {
-		color: #3c3b3b;
+		color: #6a574c;
 		display: block;
 		font-size: 0.9em;
 		font-weight: 700;
@@ -2127,7 +2129,7 @@ input, select, textarea {
 	}
 
 		select option {
-			color: #3c3b3b;
+			color: #6a574c;
 			background: #ffffff;
 		}
 
@@ -2204,8 +2206,8 @@ input, select, textarea {
 
 		input[type="checkbox"]:checked + label:before,
 		input[type="radio"]:checked + label:before {
-			background: #3c3b3b;
-			border-color: #3c3b3b;
+			background: #6a574c;
+			border-color: #6a574c;
 			color: #ffffff;
 			content: '\f00c';
 		}
@@ -2603,10 +2605,10 @@ input, select, textarea {
 
 				ul.posts article header .published {
 					display: block;
-					font-family: "Raleway", Helvetica, sans-serif;
+					font-family: 'Prestige Elite Std', Helvetica, sans-serif;
+					font-style: normal;
 					font-size: 0.6em;
-					font-weight: 400;
-					letter-spacing: 0.25em;
+					font-weight: 800;
 					margin: -0.625em 0 1.7em 0;
 					text-transform: uppercase;
 				}
@@ -2667,10 +2669,10 @@ input, select, textarea {
 
 			.mini-post header .published {
 				display: block;
-				font-family: "Raleway", Helvetica, sans-serif;
+				font-family: 'Prestige Elite Std', Helvetica, sans-serif;
+				font-style: normal;
 				font-size: 0.6em;
-				font-weight: 400;
-				letter-spacing: 0.25em;
+				font-weight: 800;
 				margin: -0.625em 0 1.7em 0;
 				text-transform: uppercase;
 			}
@@ -2757,7 +2759,7 @@ input, select, textarea {
 
 				.post > header .title h2 {
 					font-weight: 900;
-					font-size: 1.5em;
+					font-size: 1.8em;
 				}
 
 				.post > header .title > :last-child {
@@ -2781,12 +2783,12 @@ input, select, textarea {
 				}
 
 				.post > header .meta .published {
-					color: #3c3b3b;
+					color: #6a574c;
 					display: block;
-					font-family: "Raleway", Helvetica, sans-serif;
+					font-family: 'Prestige Elite Std', Helvetica, sans-serif;
+					font-style: normal;
 					font-size: 0.7em;
 					font-weight: 800;
-					letter-spacing: 0.25em;
 					margin-top: 0.5em;
 					text-transform: uppercase;
 					white-space: nowrap;
@@ -2837,10 +2839,10 @@ input, select, textarea {
 				.post > footer .stats li {
 					border-left: solid 1px rgba(160, 160, 160, 0.3);
 					display: inline-block;
-					font-family: "Raleway", Helvetica, sans-serif;
+					font-family: 'Prestige Elite Std', Helvetica, sans-serif;
+					font-style: normal;
 					font-size: 0.6em;
-					font-weight: 400;
-					letter-spacing: 0.25em;
+					font-weight: 800;
 					line-height: 1;
 					margin: 0 0 0 2em;
 					padding: 0 0 0 2em;
@@ -2960,7 +2962,7 @@ input, select, textarea {
 				}
 
 					.post > header .title h2 {
-						font-size: 1.1em;
+						font-size: 1.6em;
 					}
 
 		}
@@ -3023,10 +3025,10 @@ input, select, textarea {
 	}
 
 	header p {
-		font-family: "Raleway", Helvetica, sans-serif;
+		font-family: 'Prestige Elite Std', Helvetica, sans-serif;
+		font-style: normal;
 		font-size: 0.7em;
-		font-weight: 400;
-		letter-spacing: 0.25em;
+		font-weight: 800;
 		line-height: 2.5;
 		margin-top: -1em;
 		text-transform: uppercase;
@@ -3059,7 +3061,7 @@ input, select, textarea {
 		}
 
 		table th {
-			color: #3c3b3b;
+			color: #6a574c;
 			font-size: 0.9em;
 			font-weight: 700;
 			padding: 0 0.75em 0.75em 0.75em;
@@ -3150,7 +3152,7 @@ input, select, textarea {
 		}
 
 			#header h1 a {
-				font-size: 0.7em;
+				font-size: 1em;
 			}
 
 		#header .links {
@@ -3181,10 +3183,10 @@ input, select, textarea {
 
 				#header .links ul li a {
 					border-bottom: 0;
-					font-family: "Raleway", Helvetica, sans-serif;
-					font-size: 0.7em;
-					font-weight: 400;
-					letter-spacing: 0.25em;
+					font-family: 'Prestige Elite Std', Helvetica, sans-serif;
+					font-style: normal;
+					font-size: 0.8em;
+					font-weight: 800;
 					text-transform: uppercase;
 				}
 
@@ -3414,10 +3416,10 @@ input, select, textarea {
 	#intro .logo {
 		border-bottom: 0;
 		display: inline-block;
-		margin: 0 0 1em 0;
+		margin: 0 0 -50px 0;
 		overflow: hidden;
 		position: relative;
-		width: 4em;
+		width: 10em;
 	}
 
 
@@ -3425,7 +3427,7 @@ input, select, textarea {
 		#intro .logo img {
 			display: block;
 			margin-left: -0.25em;
-			width: 4.5em;
+			width: 10em;
 		}
 
 	#intro header h2 {
@@ -3466,7 +3468,7 @@ input, select, textarea {
 			}
 
 			#intro .logo {
-				margin: 0 0 0.5em 0;
+				margin: 0 0 -30px 0;
 			}
 
 			#intro header h2 {
@@ -3487,10 +3489,10 @@ input, select, textarea {
 
 	#footer .copyright {
 		color: #aaaaaa;
-		font-family: "Raleway", Helvetica, sans-serif;
+		font-family: 'Prestige Elite Std', Helvetica, sans-serif;
+		font-style: normal;
 		font-size: 0.5em;
-		font-weight: 400;
-		letter-spacing: 0.25em;
+		font-weight: 800;
 		text-transform: uppercase;
 	}
 
@@ -3563,10 +3565,10 @@ input, select, textarea {
 					}
 
 					#menu .links > li a p {
-						font-family: "Raleway", Helvetica, sans-serif;
+						font-family: 'Prestige Elite Std', Helvetica, sans-serif;
+						font-style: normal;
 						font-size: 0.6em;
-						font-weight: 400;
-						letter-spacing: 0.25em;
+						font-weight: 800;
 						margin-bottom: 0;
 						text-decoration: none;
 						text-transform: uppercase;
@@ -3656,10 +3658,10 @@ input, select, textarea {
 }
 
 #admin-menu .links > li a p {
-	font-family: "Raleway", Helvetica, sans-serif;
+	font-family: 'Prestige Elite Std', Helvetica, sans-serif;
+	font-style: normal;
 	font-size: 0.6em;
-	font-weight: 400;
-	letter-spacing: 0.25em;
+	font-weight: 800;
 	margin-bottom: 0;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -3708,7 +3710,7 @@ input, select, textarea {
 .colorway_category {
 	font-weight: bold;
 	padding: 20px 0;
-	color: #3c3b3b;
+	color: #6a574c;
 }
 .colorway_name {
 	background-color: rgba(160,160,160,0.075);
@@ -3838,6 +3840,38 @@ input, select, textarea {
 
 .form-group button {
 	float: right;
+}
+.mainlogo {
+	color: #6a574c;
+	font-size: 2em;
+}
+.sublogo {
+	color: #a24d4a;
+	font-size: 1.33em;
+	letter-spacing: 0.12em;
+}
+
+.mainlogo, .sublogo {
+	display: block;
+	line-height: 1em;
+}
+.logotext {
+	/*margin: 0.3em;*/
+}
+
+.tagline {
+	text-transform: lowercase;
+	color: #988671;
+	font-size: 1.05em !important;
+}
+
+.title p {
+	font-size: 0.85em;
+	color: #988671;
+}
+
+.links a, #header a {
+	color: #6a574c !important;
 }
 
 @media screen and (max-width: 700px){
