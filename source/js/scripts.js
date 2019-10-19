@@ -1,5 +1,5 @@
 const app = angular.module('rhapsodyUiApp', ['ngRoute', 'ngSanitize', 'angularMoment', 'rhapsodyUi.config', 'ngCkeditor', 'ngFileUpload']);
-
+//testing jenkins
 import navMenuController from '../components/common/nav-menu/nav-menu-controller';
 import navMenu from '../components/common/nav-menu/nav-menu-directive';
 import sideMenuController from '../components/common/side-menu/side-menu-controller';
