@@ -1,0 +1,32 @@
+<article class="post" *ngIf="isAdmin">
+    <header>
+        <div class="title">
+            <h2>Manage Users</h2>
+            <p>Edit, Add, or Remove Users Here</p>
+        </div>
+    </header>
+    <p><strong><a routerLink="/admin/add-user">Add User</a></strong></p>
+    <label>Existing Users</label>
+    <table>
+        <tr>
+            <th ngClass="selectedCls(users,'user_first_name')">
+                <a (click)="changeSorting(users,'user_first_name')" class="sort-header">First Name</a>
+            </th>
+            <th ngClass="selectedCls(users,'user_last_name')">
+                <a (click)="changeSorting(users,'user_last_name')" class="sort-header">Last Name</a>
+            </th>
+            <th ngClass="selectedCls(users,'user_email')">
+                <a (click)="changeSorting(users,'user_email')" class="sort-header">Email</a>
+            </th>
+            <th ngClass="selectedCls(users,'user_level')">
+                <a (click)="changeSorting(users,'user_level')" class="sort-header">Level</a>
+            </th>
+        </tr>
+        <tr *ngFor="let user of users.data | orderBy: users.sort.column:users.sort.descending">
+            <td><a routerLink="/admin/edit-user/{{user.user_id}}">{{user.user_first_name}}</a></td>
+            <td><a routerLink="/admin/edit-user/{{user.user_id}}">{{user.user_last_name}}</a></td>
+            <td><a routerLink="/admin/edit-user/{{user.user_id}}">{{user.user_email}}</a></td>
+            <td><a routerLink="/admin/edit-user/{{user.user_id}}">{{user.user_level}}</a></td>
+        </tr>
+    </table>
+</article>

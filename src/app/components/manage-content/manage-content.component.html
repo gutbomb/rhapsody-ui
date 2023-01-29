@@ -1,0 +1,80 @@
+<article class="post">
+    <header>
+        <div class="title">
+            <h2>Manage Content</h2>
+            <p>Edit text and images for pages</p>
+        </div>
+    </header>
+    <label>Select Page
+    <select (ngModelChange)="selectedArticle = $event;getArticle(selectedArticle)" [ngModel]="selectedArticle" name="selectedArticle">
+        <option *ngFor="let article of articles" [ngValue]="article.article_tab">{{article.article_title}}</option>
+    </select></label>
+
+        <div>
+            <label for="articleTitle">Title
+            <input type="text" id="articleTitle" name="article_title" [(ngModel)]="article.article_title" (ngModelchange)="article.article_title = $event" required autofocus></label>
+        </div>
+        <div>
+            <label for="articleSubtitle">Subtitle
+            <input type="text" id="articleSubtitle" name="article_subtitle" [(ngModel)]="article.article_subtitle" (ngModelchange)="article.article_subtitle = $event" required autofocus></label>
+        </div>
+        <div>
+            <label>Image</label>
+            <div class="image-editor-item" *ngIf="article.article_image_filename">
+                <img [(src)]="imageUrl" class="image-editor">
+                <span>{{article?.article_image_filename}}</span>
+                <select [(ngModel)]="article.article_image_class" (ngModelchange)="article.article_image_class = $event" name="article_image_class">
+                    <option value="article-image-left">Left Aligned</option>
+                    <option value="article-image-right">Right Aligned</option>
+                    <option value="article-image-full">Full-width</option>
+                </select>
+                <a (click)="removeImage()" class="fa-trash danger"> Remove</a>
+            </div>
+            <div *ngIf="!article.article_image_filename" class="image-editor-item">
+                <input
+                    type="file"
+                    [(ngModel)]="uploadFile"
+                    name="uploadFile"
+                    (ngModelchange)="uploadFile = $event;"
+                    (change)="uploadImage($event)"
+                />
+                <img class="image-editor" ngf-thumbnail="uploadFile || '/images/thumb.png'"/>
+                <select [(ngModel)]="article.article_image_class" name="article_image_class" (ngModelchange)="article.article_image_class = $event" >
+                    <option value="article-image-left">Left Aligned</option>
+                    <option value="article-image-right">Right Aligned</option>
+                    <option value="article-image-full">Full-width</option>
+                </select>
+            </div>
+            <div *ngIf="uploadError" class="alert alert-danger">{{uploadError}}</div>
+        </div>
+        <div>
+            <label>Page Text</label>
+            <ckeditor [editor]="Editor" [(ngModel)]="article.article_content" (ngModelChange)="article.article_content = $event"></ckeditor>
+        </div>
+        <div class="row">
+            <div class="button-row">
+                <br><button (click)="updateArticle()" class="default-button">Save Changes</button>
+            </div>
+            <div class="button-row">
+                <br><button (click)="getArticle(selectedArticle)">Reset Changes</button>
+            </div>
+        </div>
+    <br>
+    <div class="alert alert-success" *ngIf="success">
+        {{success}}
+    </div>
+    <div class="alert alert-danger" *ngIf="error">
+        {{error}}
+    </div>
+</article>
+<h3>Preview</h3>
+<article class="post">
+    <header>
+        <div class="title">
+            <h2>{{article?.article_title}}</h2>
+            <p>{{article?.article_subtitle}}</p>
+        </div>
+    </header>
+    <img [src]="imageUrl" ngClass="{{article.article_image_class}}" *ngIf="article?.article_image_filename">
+    <div [innerHtml]="article?.article_content"></div>
+</article>

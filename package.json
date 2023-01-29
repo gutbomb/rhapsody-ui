@@ -1,58 +1,47 @@
 {
-  "name": "rhapsody",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "dependencies": {},
+  "name": "rhapsody-ui",
+  "version": "2.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "gulp watch",
-    "preinstall": "npx npm-force-resolutions"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "buildProd": "ng build --configuration=production",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
   },
-  "resolutions": {
-    "graceful-fs": "^4.2.9"
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^15.1.0",
+    "@angular/common": "^15.1.0",
+    "@angular/compiler": "^15.1.0",
+    "@angular/core": "^15.1.0",
+    "@angular/forms": "^15.1.0",
+    "@angular/platform-browser": "^15.1.0",
+    "@angular/platform-browser-dynamic": "^15.1.0",
+    "@angular/router": "^15.1.0",
+    "@ckeditor/ckeditor5-angular": "^4.0.0",
+    "@ckeditor/ckeditor5-build-classic": "^36.0.0",
+    "@ng-bootstrap/ng-bootstrap": "^14.0.1",
+    "@popperjs/core": "^2.11.6",
+    "bootstrap": "^5.2.3",
+    "buffer": "^6.0.3",
+    "lodash": "^4.17.21",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.12.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gutbomb/rhapsody2.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/gutbomb/rhapsody2/issues"
-  },
-  "homepage": "https://github.com/gutbomb/rhapsody2#readme",
   "devDependencies": {
-    "babel": "^6.23.0",
-    "babel-eslint": "^7.2.1",
-    "babel-preset-es2015": "^6.24.0",
-    "babelify": "^7.3.0",
-    "bower": "^1.8.14",
-    "browser-sync": "^2.18.8",
-    "browserify": "^14.1.0",
-    "del": "^2.2.2",
-    "eslint": "^3.18.0",
-    "gulp": "^3.9.1",
-    "gulp-add-src": "^0.2.0",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-babel": "^6.1.2",
-    "gulp-cli": "^2.3.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-eslint": "^3.0.1",
-    "gulp-imagemin": "^3.2.0",
-    "gulp-jshint": "^2.0.4",
-    "gulp-ng-config": "^1.4.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-util": "^3.0.8",
-    "gulp-watch": "^4.3.11",
-    "jshint": "^2.9.4",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
-  },
-  "babel": {
-    "presets": [
-      "es2015"
-    ]
+    "@angular-devkit/build-angular": "^15.1.2",
+    "@angular/cli": "~15.1.2",
+    "@angular/compiler-cli": "^15.1.0",
+    "@types/jasmine": "~4.3.0",
+    "@types/lodash": "^4.14.191",
+    "jasmine-core": "~4.5.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.0.0",
+    "typescript": "~4.9.4"
   }
 }

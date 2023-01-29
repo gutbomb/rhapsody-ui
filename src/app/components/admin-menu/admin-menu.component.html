@@ -1,0 +1,10 @@
+<section>
+    <ul class="links" *ngIf="isAdmin">
+        <li><h3><a routerLink="/admin/manage-content">Manage Content</a></h3></li>
+        <li><h3><a routerLink="/admin/colorways">Manage Colorways</a></h3></li>
+        <li><h3><a routerLink="/admin/users">Manage Users</a></h3></li>
+        <li><h3><a routerLink="/admin/account">Manage Account</a></h3></li>
+        <li><h3><a routerLink="/admin/change-password">Change Password</a></h3></li>
+        <li><h3><a (click)="logout();">Logout</a></h3></li>
+    </ul>
+</section>

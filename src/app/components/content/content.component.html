@@ -1,0 +1,10 @@
+<article class="post" *ngIf="article">
+    <header>
+        <div class="title">
+            <h2>{{article.article_title}}</h2>
+            <p>{{article.article_subtitle}}</p>
+        </div>
+    </header>
+    <img [src]="imageUrl" ngClass="{{article.article_image_class}}" *ngIf="article.article_image_filename">
+    <div [innerHtml]="article.article_content"></div>
+</article>
