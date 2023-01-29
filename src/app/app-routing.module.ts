@@ -13,7 +13,7 @@ import { ManageContentComponent } from './components/manage-content/manage-conte
 import { ManageColorwaysComponent } from './components/manage-colorways/manage-colorways.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: ContentComponent},
   { path: 'colorways', component: ColorwaysComponent},
   { path: 'wholesale', component: ContentComponent},
@@ -30,7 +30,16 @@ const routes: Routes = [
   { path: 'admin/add-user', component: AddUserComponent },
   { path: 'admin/edit-user/:id', component: EditUserComponent },
   { path: 'admin/manage-content', component: ManageContentComponent },
-  { path: 'admin/colorways', component: ManageColorwaysComponent }
+  { path: 'admin/colorways', component: ManageColorwaysComponent },
+  { path: 'index.php/colorways', redirectTo: 'colorways', pathMatch: 'full'},
+  { path: 'index.php/wholesale', redirectTo: 'wholesale', pathMatch: 'full'},
+  { path: 'index.php/custom', redirectTo: 'custom', pathMatch: 'full'},
+  { path: 'index.php/classes', redirectTo: 'classes', pathMatch: 'full'},
+  { path: 'index.php/rabbitry', redirectTo: 'rabbitry', pathMatch: 'full'},
+  { path: 'index.php/shop', redirectTo: 'shop', pathMatch: 'full'},
+  { path: 'admin', redirectTo: 'admin/login', pathMatch: 'full'},
+  { path: 'index.php/colorways', redirectTo: 'colorways', pathMatch: 'full'},
+
 ];
 
 @NgModule({
