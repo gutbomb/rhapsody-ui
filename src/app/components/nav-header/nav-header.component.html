@@ -1,0 +1,28 @@
+<header id="header">
+    <nav class="main" id="admin-button" *ngIf="isAdmin">
+        <ul>
+            <li class="menu">
+                <a class="fa-gear" (click)="toggleAdminMenu()">Admin</a>
+            </li>
+        </ul>
+    </nav>
+    <h1><a [routerLink]="['home']">Rhapsody Fiber Arts</a></h1>
+    <nav class="links">
+        <ul>
+            <li><a routerLink="home">Home</a></li>
+            <li><a routerLink="colorways">Colorways</a></li>
+            <li><a routerLink="wholesale">Wholesale</a></li>
+            <li><a routerLink="custom">Custom</a></li>
+            <li><a routerLink="classes">Classes</a></li>
+            <li><a routerLink="rabbitry">Rabbitry</a></li>
+            <li><a routerLink="shop">Shop</a></li>
+        </ul>
+    </nav>
+    <nav class="main" id="menu-button">
+        <ul>
+            <li class="menu">
+                <a class="fa-bars" (click)="toggleMenu()">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>

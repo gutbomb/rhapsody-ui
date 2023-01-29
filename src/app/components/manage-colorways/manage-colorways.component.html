@@ -1,0 +1,113 @@
+<article class="post">
+    <header>
+        <div class="title">
+            <h2 class="page-title">Manage Colorways</h2>
+            <p>Manage Colorways, Images, and Categories</p>
+        </div>
+    </header>
+    <div>
+        <a (click)="newColorway=true" *ngIf="!newColorway">Add Colorway</a>
+        <div *ngIf="newColorway">
+            <span class="colorway-edit-button"><a (click)="newColorway=false">Cancel</a></span>
+            <span class="colorway-edit-button"><a (click)="addColorway()">Save</a></span>
+            New Colorway Name
+            <input type="text" [(ngModel)]="newColorwayName">
+            Choose Category
+            <select [(ngModel)]="newColorwayCategory">
+                <option *ngFor="let addCategory of colorways" [ngValue]="addCategory.colorway_category_id">{{addCategory.colorway_category_name}}</option>
+            </select>
+        </div>
+    </div>
+    <div>
+        <a (click)="addCategory=true" *ngIf="!addCategory">Add Colorway Category</a>
+        <div *ngIf="addCategory" class="new-colorway-editor">
+            <span class="colorway-edit-button"><a (click)="addCategory=false">Cancel</a></span>
+            <span class="colorway-edit-button"><a (click)="addColorwayCategory()">Save</a></span>
+            New Category Name
+            <input type="text" [(ngModel)]="newCategoryName">
+        </div>
+    </div>
+
+    <div id="colorways_container">
+        <div *ngFor="let category of colorways; index as categoryIndex" class="colorway_category_container">
+            <div class="colorway_category">
+                <div *ngIf="!category.edit">
+                    {{category.colorway_category_name}}
+                    <span class="colorway-edit-button"><a (click)="colorways[categoryIndex].edit=true">Edit</a></span>
+                </div>
+                <div *ngIf="category.edit">
+                    <span class="colorway-edit-button"><a (click)="getColorways()">Cancel</a></span>
+                    <span class="colorway-edit-button"><a (click)="updateColorwayCategory(categoryIndex)">Save</a></span>
+                    <span class="colorway-edit-button danger"><a (click)="selectedCategory=category">Delete</a></span>
+                    Edit Category Name
+                    <input type="text" [(ngModel)]="colorways[categoryIndex].colorway_category_name">
+                </div>
+            </div>
+            <div *ngFor="let colorway of category.colorways; index as colorwayIndex">
+                <div class="colorway_name">
+                    <div *ngIf="!colorway.edit">
+                        {{colorway.colorway_name}}
+                        <span class="colorway-edit-button"><a (click)="colorways[categoryIndex].colorways[colorwayIndex].edit=true">Edit</a></span>
+                        <span class="colorway-edit-button"><a (click)="colorways[categoryIndex].colorways[colorwayIndex].addImage=true">Add Image</a></span>
+                    </div>
+                    <div *ngIf="colorway.edit">
+                        <span class="colorway-edit-button"><a (click)="getColorways()">Cancel</a></span>
+                        <span class="colorway-edit-button"><a (click)="updateColorway(categoryIndex, colorwayIndex)">Save</a></span>
+                        <span class="colorway-edit-button danger"><a (click)="selectedColorway=colorway">Delete</a></span>
+                        Edit Colorway Name
+                        <input type="text" [(ngModel)]="colorways[categoryIndex].colorways[colorwayIndex].colorway_name">
+                        Choose New Category
+                        <select [(ngModel)]="colorways[categoryIndex].colorways[colorwayIndex].colorway_category_id">
+                            <option *ngFor="let internalCategory of colorways" [ngValue]="internalCategory.colorway_category_id">{{internalCategory.colorway_category_name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="colorway_images">
+                    <div class="colorway_image" *ngFor="let image of colorway.images">
+                        <img [src]="imagePath+image.colorway_image_filename">
+                        <a (click)="deleteColorwayImage(image.colorway_image_id)" class="fa-trash"> Remove</a>
+                    </div>
+                    <form name="imageUpload" class="colorway_image" *ngIf="colorway.addImage">
+                        <input
+                                type="file"
+                                [(ngModel)]="uploadFile"
+                                name="uploadFile"
+                                (ngModelchange)="uploadFile = $event;"
+                                (change)="uploadImage($event, colorway.colorway_id)"
+                        />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+<div id="popup1" class="modal-overlay" *ngIf="selectedCategory">
+    <div class="popup">
+        <div class="modal-header">
+            <span class="close" data-dismiss="modal" aria-label="Close" (click)="selectedCategory=false">&times;</span>
+            <h4 class="modal-title" id="myModalLabel">Delete Colorway Category</h4>
+        </div>
+        <div class="modal-body">
+            <p>This will delete the entire colorway category: {{selectedCategory.colorway_category_name}} and all colorways and colorway images it contains.  This can't be undone.</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="small" (click)="selectedCategory=false">Cancel</button>
+            <button type="button" class="small danger-button" data-dismiss="modal" (click)="deleteColorwayCategory(selectedCategory.colorway_category_id)">OK</button>
+        </div>
+    </div>
+</div>
+<div id="popup1" class="modal-overlay" *ngIf="selectedColorway">
+    <div class="popup">
+        <div class="modal-header">
+            <span class="close" data-dismiss="modal" aria-label="Close" (click)="selectedColorway=false">&times;</span>
+            <h4 class="modal-title" id="myModalLabel">Delete Colorway</h4>
+        </div>
+        <div class="modal-body">
+            <p>This will delete the entire colorway {{selectedColorway.colorway_name}} and all colorway images it contains.  This can't be undone.</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="small" (click)="selectedColorway=false">Cancel</button>
+            <button type="button" class="small danger-button" data-dismiss="modal" (click)="deleteColorway(selectedColorway.colorway_id)">OK</button>
+        </div>
+    </div>
+</div>
