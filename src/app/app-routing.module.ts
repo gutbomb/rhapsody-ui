@@ -17,7 +17,6 @@ const routes: Routes = [
   { path: 'home', component: ContentComponent},
   { path: 'colorways', component: ColorwaysComponent},
   { path: 'wholesale', component: ContentComponent},
-  { path: 'custom', component: ContentComponent},
   { path: 'classes', component: ContentComponent},
   { path: 'rabbitry', component: ContentComponent},
   { path: 'shop', component: ContentComponent},
